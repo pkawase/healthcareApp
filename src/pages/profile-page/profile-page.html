@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Profile</ion-title>
+		<!--<ion-buttons end>-->
+			<!--<button ion-button icon-only (click)="logOut()">-->
+        <!--<ion-icon name="log-out"></ion-icon>-->
+      <!--</button>-->
+		<!--</ion-buttons>-->
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid>
+		<!--<ion-row>-->
+			<!--<ion-col class="center" width-100>-->
+				<!--<div *ngIf="user">-->
+					<!--<h2>Hey Dude!</h2>-->
+				<!--</div>-->
+			<!--</ion-col>-->
+		<!--</ion-row>-->
+		<ion-row>
+			<ion-col width-100>
+				<div>
+					Your current Stress-Level
+          <hr class="line">
+				</div>
+			</ion-col>
+		</ion-row>
+
+<ion-row>
+			<ion-col class="center" width-100>
+				<div *ngIf="stress_score != null" class="score">
+					{{stress_score}}
+				</div>
+        <div *ngIf="stress_score == null " style="font-size: small; color: #888">
+          Please do a few more trainings.
+        </div>
+        <div style="margin-top:12px; color: #666;">
+          A stress-level of around 14 is considered normal, whereas a lower level means less perceived stress
+        </div>
+			</ion-col>
+		</ion-row>
+
+    <ion-row>
+			<ion-col width-100>
+				<div>
+					Number of Trainings
+          <hr class="line">
+				</div>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<!--<ion-col offset-10 width-80>-->
+			<!-- some chart experimentation -->
+
+			<canvas baseChart width="100%" height="90%" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+				[colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+			<!--(chartHover)="chartHovered($event)"-->
+			<!--(chartClick)="chartClicked($event)"-->
+			<!--</ion-col>-->
+		</ion-row>
+	</ion-grid>
+
+
+
+</ion-content>
